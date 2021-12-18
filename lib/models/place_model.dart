@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'dart:io';
 
 class PlaceLocation {
@@ -13,7 +12,7 @@ class PlaceLocation {
 class Place {
   final String id;
   final String title;
-  final PlaceLocation location;
+  final PlaceLocation? location;
   final File image;
 
   Place(

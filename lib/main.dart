@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../screens/places_list_screen.dart';
 import '../screens/add_place_screen.dart';
-import '../provider/great_places_providers.dart';
+import '../providers/great_places_providers.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
