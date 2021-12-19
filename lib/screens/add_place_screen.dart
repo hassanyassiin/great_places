@@ -4,8 +4,9 @@ import 'dart:io';
 
 import '../providers/great_places_providers.dart';
 import '../widgets/image_input_builder.dart';
+import '../widgets/location_input_builder.dart';
 
-class AddPlaceScreen extends StatefulWidget {
+class AddPlaceScreen extends StatefulWidget {   //todo why stateful recheck  it
   const AddPlaceScreen({Key? key}) : super(key: key);
   static const routeName = '/add-place';
 
@@ -16,6 +17,7 @@ class AddPlaceScreen extends StatefulWidget {
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   final _titleController = TextEditingController();
   late File _pickedImage;
+
   void _selectImage(File pickedImage) {
     _pickedImage = pickedImage;
   }
@@ -55,6 +57,10 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       height: 10,
                     ),
                     ImageInputBuilder(onSelectImage: _selectImage),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    const  LocationInput(),
                   ],
                 ),
               ),
