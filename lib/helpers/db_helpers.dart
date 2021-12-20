@@ -8,7 +8,7 @@ class DBHelper {
     return sql.openDatabase(path.join(dbPath, 'places.db'),
         onCreate: (db, version) {
       return db.execute(
-          'CREATE TABLE user_places(id TEXT PRIMARY KEY, title TEXT, image TEXT)');
+          'CREATE TABLE user_places(id TEXT PRIMARY KEY, title TEXT, image TEXT, loc_lat REAL, Loc_lng REAL, address TEXT)');
     }, version: 1);
   }
 
@@ -17,7 +17,7 @@ class DBHelper {
     db.insert(table, data, conflictAlgorithm: sql.ConflictAlgorithm.replace);
   }
 
-  static Future<List<Map<String,dynamic>>> getData(String table) async {
+  static Future<List<Map<String, dynamic>>> getData(String table) async {
     final db = await DBHelper.dataBase();
     return db.query(table);
   }
